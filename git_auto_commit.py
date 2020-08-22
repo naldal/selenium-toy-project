@@ -45,4 +45,3 @@ driver.find_element_by_xpath('//*[@id="submit-file"]').click()
 driver.find_element_by_xpath('/html/body/div[4]/div/main/div[1]/div/div/h1/span[1]/a').click()
 
 
-
