@@ -7,7 +7,7 @@
 ![ex_screenshot](https://github.com/naldal/naldal.github.io/blob/master/assets/images/autosendmail.gif?raw=true)
 
 네이버 로그인, 비밀번호를 스크립트로 전달 후 캡챠 우회 -> 메일 전송창까지 이동후 
-iframe 내부에서 값을 입력한 다음 다시 driver set to defualt 한 뒤 메일전송
+iframe 내부에서 값을 입력한 다음 다시 driver set to defalt 한 뒤 메일전송
 <br><br><br>
 ## Github Auto Commit (잔디밭 채우기)
 <br>
