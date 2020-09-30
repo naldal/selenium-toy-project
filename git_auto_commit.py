@@ -15,7 +15,7 @@ def clipboard_input(user_xpath, user_input):
 
 login = {
     "id": "cec7378@gmail.com",
-    "pwd": "-!"
+    "pwd": "thdgkals12!"
 }
 
 driver = webdriver.Chrome()
