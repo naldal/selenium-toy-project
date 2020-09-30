@@ -1,5 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton
+from bs4 import BeautifulSoup as bs
 
 
 class Exam(QWidget):
