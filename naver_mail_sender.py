@@ -23,7 +23,7 @@ action = ActionChains(driver)
 
 naver_account = {
     "id": "cec7777",
-    "pwd": "-"
+    "pwd": "sksroqkfwk123"
 }
 
 # goto login section

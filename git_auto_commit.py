@@ -1,9 +1,11 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.action_chains import ActionChains
+import os
+import sys
+import time
 
 import pyperclip
-import time
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 
 
 def clipboard_input(user_xpath, user_input):
@@ -18,7 +20,12 @@ login = {
     "pwd": "thdgkals12!"
 }
 
-driver = webdriver.Chrome()
+if getattr(sys, 'frozen', False):
+    chromdriver_path = os.path.join(sys._MEIPASS, "chromedriver.exe")
+    driver = webdriver.Chrome(chromdriver_path)
+else:
+    driver = webdriver.Chrome()
+
 url = 'https://github.com/'
 driver.get(url)
 driver.maximize_window()
@@ -29,7 +36,7 @@ driver.find_element_by_xpath('/html/body/div[1]/header/div/div[2]/div[2]/a[1]').
 # login process
 clipboard_input('//*[@id="login_field"]', login.get("id"))
 clipboard_input('//*[@id="password"]', login.get("pwd"))
-driver.find_element_by_xpath('//*[@id="login"]/form/div[4]/input[9]').click()
+driver.find_element_by_xpath('//*[@id="login"]/form/div[4]/input[12]').click()
 
 # profile img click
 driver.find_element_by_xpath('/html/body/div[1]/header/div[7]/details/summary/img').click()
@@ -40,8 +47,7 @@ driver.find_element_by_xpath('//a[@href="/naldal/naldal.github.io"]').click()
 # readme update button
 driver.find_element_by_xpath('//a[@href="/naldal/naldal.github.io/edit/master/README.md"]').click()
 # line 5 click
-driver.find_element_by_xpath('//*[@id="new_blob"]/div[5]/div[2]/div/div[5]/div[1]/div/div/div/div[5]/div[5]/pre').send_keys(Keys.SPACE)
+driver.find_element_by_xpath(
+    '//*[@id="new_blob"]/div/div[5]/div[2]/div/div[5]/div[1]/div/div/div/div[5]/div[5]/pre/span').send_keys(Keys.SPACE)
 driver.find_element_by_xpath('//*[@id="submit-file"]').click()
 driver.find_element_by_xpath('/html/body/div[4]/div/main/div[1]/div/div/h1/span[1]/a').click()
-
-
